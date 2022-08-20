@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Comment en peux envoyer la liste fourniture ?",
+    "description": "Il vous suffit de cliquer <a href='#' class='underline font-bold'> Ici </a>. <br> Vous pourrez alors nous l'envoyer par photo en nous indiquant vos coordonnées et vous serez prévenu par mail dès qu'elle sera en ligne sur le site."
+  },
+  {
+    "id": 2,
+    "title": "Confirmation du comande ?",
+    "description": "En effet, les livres scolaires sont commandés en temps réel auprès de nos fournisseurs pour vous et sont en commande ferme, il nous est alors impossible de les échanger ou de les rembourser."
+  },
+  {
+    "id": 3,
+    "title": "Comment payer le commande ?",
+    "description": "Payez en espèces dès que vous recevez votre commande. <br> - Nous acceptons uniquement le paiement en Dirham Marocain."
+  },
+  {
+    "id": 4,
+    "title": "La livraison ",
+    "description": "Profitez de la livraison gratuite à partir de : <br>  * 1 500 dhs d'achats partout au Maroc"
+  }
+]

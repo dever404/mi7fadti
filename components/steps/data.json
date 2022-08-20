@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Etape 1",
+    "description": "Déposez votre liste scolaire ",
+    "img": {
+      "src": "/img/etap1.jpg",
+      "alt": "déposez votre liste scolaire"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Etape 2",
+    "description": "La confirmation de votre commande",
+    "img": {
+      "src": "/img/etap2.jpg",
+      "alt": "Confirmation de commande"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Etape 3",
+    "description": "Collecter et envoyer la commande",
+    "img": {
+      "src": "/img/etap3.jpg",
+      "alt": "Envoyer la commande"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Etape 4",
+    "description": "Réception commande et payer le montant",
+    "img": {
+      "src": "/img/etap4.jpg",
+      "alt": "Réception commande"
+    }
+  }
+]
