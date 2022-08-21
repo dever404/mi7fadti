@@ -21,8 +21,7 @@ export default function (req, res) {
   transporter.sendMail(mailData, function (err, info) {
     if(err)
       console.log(err)
-    else
-      res.redirect('/thanks') 
   })
   res.status(200)
+  res.redirect('/thanks') 
 }
