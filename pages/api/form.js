@@ -1,3 +1,4 @@
+import { NextResponse, NextRequest } from 'next/server'
 export default function (req, res) {
   require('dotenv').config()
   
@@ -20,5 +21,6 @@ export default function (req, res) {
   }
   transporter.sendMail(mailData);
   //res.status(200)
-  res.redirect('/thanks'); 
+  //res.redirect('/thanks'); 
+  return NextResponse.redirect('/thanks')
 }
