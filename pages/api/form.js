@@ -22,5 +22,4 @@ export default function (req, res) {
   transporter.sendMail(mailData);
   //res.status(200)
   //res.redirect('/thanks'); 
-  return NextResponse.redirect('/thanks')
 }
