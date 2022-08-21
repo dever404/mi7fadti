@@ -18,10 +18,7 @@ export default function (req, res) {
     text: " Commande de : " + req.body.first_name,
     html: `<div>Nom & Prenom : ${req.body.first_name} ${req.body.last_name} <br/> Tel :${req.body.phone} <br/> Email : ${req.body.email} <br/> Adress : ${req.body.adress} <br/> Liste : ${req.body.list}`
   }
-  transporter.sendMail(mailData, function (err, info) {
-    if(err)
-      console.log(err)
-  })
-  res.status(200)
-  res.redirect('/thanks') 
+  transporter.sendMail(mailData);
+  //res.status(200)
+  res.redirect('/thanks'); 
 }
