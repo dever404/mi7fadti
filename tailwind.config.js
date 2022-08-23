@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       zIndex: {
-        '1':'1'
-      }
+        1: "1",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

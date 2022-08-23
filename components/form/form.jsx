@@ -1,12 +1,54 @@
+import {FormEvent, useState} from "react";
+import Router from 'next/router'
 const Form = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    // const [first_name, setFirst_name] = useState('');
+    // const [last_name, setLast_name] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [phone, setTel] = useState('');
+    // const [list, setList] = useState('');
+    // const [adress, setAdress] = useState('');
+    
+    const form = {
+      first_name : event.target.first_name.value,
+      last_name: event.target.last_name.value,
+      phone: event.target.phone.value,
+      email: event.target.email.value,
+      list: event.target.list.value,
+      adress: event.target.adress.value,
+    }
+
+    const rawResponse = await fetch('/api/form', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(form)
+    })
+    const content = await rawResponse.json();
+
+    if (content.rep == 'ok') {
+      Router.push('/thanks')
+    }
+
+    // setFirst_name('')
+    // setLast_name('')
+    // setEmail('')
+    // setTel('')
+    // setList('')
+    // setAdress('')
+  }
+
   return (
-    <div id='commande'>
+    <div id="commande">
       <h2 className="text-center text-2xl md:text-[50px] font-bold mb-8 md:mb-12">
         Passer un commande
       </h2>
 
-      <form action="/api/form" method="post" className=" p-8 mb-20">
-
+      <form onSubmit={handleSubmit} className=" p-8 mb-20">
         <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 mb-6 w-full group">
             <input
@@ -57,7 +99,7 @@ const Form = () => {
               htmlFor="phone"
               className="peer-focus:font-medium absolute text-sm  text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-             Numéro de téléphone
+              Numéro de téléphone
             </label>
           </div>
           <div className="relative z-0 mb-6 w-full group">
@@ -73,27 +115,27 @@ const Form = () => {
               htmlFor="email"
               className="peer-focus:font-medium absolute text-sm  text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-             Address email  
+              Address email
             </label>
           </div>
         </div>
 
         <div className="relative z-0 mb-6 w-full group">
-        <textarea
-              rows="4" 
-              name="list"
-              id="list"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2  appearance-none  border-gray-600 focus:border-blue-500  focus:ring-0 peer focus:outline-none"
-              placeholder=" "
-              required
-            ></textarea>
-        <label
-              htmlFor="list"
-              className="peer-focus:font-medium absolute text-sm  text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Liste des fournitures
-            </label>
-          </div>
+          <textarea
+            rows="4"
+            name="list"
+            id="list"
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2  appearance-none  border-gray-600 focus:border-blue-500  focus:ring-0 peer focus:outline-none"
+            placeholder=" "
+            required
+          ></textarea>
+          <label
+            htmlFor="list"
+            className="peer-focus:font-medium absolute text-sm  text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >
+            Liste des fournitures
+          </label>
+        </div>
         <div className="relative z-0 mb-6 w-full group">
           <input
             type="text"
@@ -108,7 +150,7 @@ const Form = () => {
             className="peer-focus:font-medium absolute text-sm  text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
             Address
-          </label> 
+          </label>
         </div>
 
         <button
@@ -119,7 +161,7 @@ const Form = () => {
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form

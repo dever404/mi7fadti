@@ -1,11 +1,15 @@
-import { Html, Head, Main, NextScript } from "next/document";
-import Footer from "../components/footer/footer";
-import Header from "../components/header/header";
+import { Html, Head, Main, NextScript } from 'next/document'
+import Footer from '../components/footer/footer'
+import Header from '../components/header/header'
 
 export default function Document() {
   return (
     <Html>
-      <Head />
+      <Head>
+        <title>Mi7fadti.com</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <body className="container mx-auto px-4">
         <Header />
         <Main />
@@ -13,5 +17,5 @@ export default function Document() {
         <Footer />
       </body>
     </Html>
-  );
+  )
 }
